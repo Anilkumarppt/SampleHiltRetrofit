@@ -23,4 +23,5 @@ class CharacterRepository @Inject constructor(val characterRemoteData: Character
             emit(safeApiCall { characterRemoteData.getCharacters()})
         }.flowOn(Dispatchers.IO)
     }
+    suspend fun getCharactersLiveData()=characterRemoteData.getCharacters()
 }
